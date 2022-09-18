@@ -871,8 +871,6 @@ console.log(e);
 	
 	}
 
-
-
 }
 
 module.exports = {api: BambooApi, crypto: BambooCrypto};
