@@ -22,13 +22,13 @@ node example.js
 <h3>Include into your project</h3>
 
 ```
-npm install https://github.com/mrmikeo/bamboo-js
+npm install https://github.com/mrmikeo/bamboo-js.git
 ```
 
 <h3>Instantiate</h3>
 
 ```
-const Bamboo = require('./index');
+const Bamboo = require('bamboo-js');
 
 const bambooCrypto = new Bamboo.crypto();
 const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
