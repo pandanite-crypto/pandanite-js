@@ -1,0 +1,18 @@
+{
+  "name": "bamboo-js",
+  "version": "1.0.0",
+  "description": "Nodejs Module for Interacting with Bamboo Crypto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/mrmikeo/bamboo-js",
+  "author": "Michael Osullivan",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "big.js": "^6.2.1",
+    "bip39": "^3.0.4",
+    "ed25519": "0.0.5",
+    "got": "^11.8.5"
+  }
+}
