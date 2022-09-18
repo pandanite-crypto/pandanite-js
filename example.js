@@ -4,117 +4,137 @@ const bambooCrypto = new Bamboo.crypto();
 const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 
-/* Bamboo Crypto Methods */
+(async () => {
 
-/* generateNewAddress */
+	/* Bamboo Crypto Methods */
 
-console.log("Testing: generateNewAddress()");
+	/* generateNewAddress */
 
-let newAddress;
+	console.log("Testing: generateNewAddress()");
 
-try {
+	let newAddress;
 
-	newAddress = bambooCrypto.generateNewAddress();
+	try {
 
-	console.log(newAddress);
+		newAddress = bambooCrypto.generateNewAddress();
 
-} catch (e) {
+		console.log(newAddress);
 
-	console.log('Error');
-	console.log(e);
+	} catch (e) {
 
-}
+		console.log('Error');
+		console.log(e);
 
-/* generateAddressFromMnemonic */
+	}
 
-console.log("Testing: generateAddressFromMnemonic()");
+	/* generateAddressFromMnemonic */
 
-try {
+	console.log("Testing: generateAddressFromMnemonic()");
 
-	let restoreAddress = bambooCrypto.generateAddressFromMnemonic(newAddress.mnemonic);
+	try {
 
-	console.log(restoreAddress);
+		let restoreAddress = bambooCrypto.generateAddressFromMnemonic(newAddress.mnemonic);
 
-} catch (e) {
+		console.log(restoreAddress);
 
-	console.log('Error');
-	console.log(e);
+	} catch (e) {
 
-}
+		console.log('Error');
+		console.log(e);
 
-/* validateAddress */
+	}
 
-console.log("Testing: validateAddress()");
+	/* validateAddress */
 
-try {
+	console.log("Testing: validateAddress()");
 
-	let validateAddress = bambooCrypto.validateAddress(newAddress.address);
+	try {
 
-	console.log(validateAddress);
+		let validateAddress = bambooCrypto.validateAddress(newAddress.address);
 
-} catch (e) {
+		console.log(validateAddress);
 
-	console.log('Error');
-	console.log(e);
+	} catch (e) {
 
-}
+		console.log('Error');
+		console.log(e);
 
-/* createSignedTransaction */
+	}
 
-console.log("Testing: createSignedTransaction()");
+	/* createSignedTransaction */
 
-try {
+	console.log("Testing: createSignedTransaction()");
 
-	let createSignedTransaction = bambooCrypto.createSignedTransaction(newAddress.address, 1, newAddress.publicKey, newAddress.privateKey);
+	try {
 
-	console.log(createSignedTransaction);
+		let createSignedTransaction = bambooCrypto.createSignedTransaction(newAddress.address, 1, newAddress.publicKey, newAddress.privateKey);
 
-} catch (e) {
+		console.log(createSignedTransaction);
 
-	console.log('Error');
-	console.log(e);
+	} catch (e) {
 
-}
+		console.log('Error');
+		console.log(e);
 
-/* signMessage */
+	}
 
-console.log("Testing: signMessage()");
+	/* signMessage */
 
-let signMessage;
+	console.log("Testing: signMessage()");
 
-try {
+	let signMessage;
 
-	signMessage = bambooCrypto.signMessage('test', newAddress.publicKey, newAddress.privateKey);
+	try {
 
-	console.log(signMessage);
+		signMessage = bambooCrypto.signMessage('test', newAddress.publicKey, newAddress.privateKey);
 
-} catch (e) {
+		console.log(signMessage);
 
-	console.log('Error');
-	console.log(e);
+	} catch (e) {
 
-}
+		console.log('Error');
+		console.log(e);
 
-/* verifyMessage */
+	}
 
-console.log("Testing: verifyMessage()");
+	/* verifyMessage */
 
-try {
+	console.log("Testing: verifyMessage()");
 
-	let verifyMessage = bambooCrypto.verifyMessage('test', newAddress.publicKey, signMessage);
+	try {
 
-	console.log(verifyMessage);
+		let verifyMessage = bambooCrypto.verifyMessage('test', newAddress.publicKey, signMessage);
 
-} catch (e) {
+		console.log(verifyMessage);
 
-	console.log('Error');
-	console.log(e);
+	} catch (e) {
 
-}
+		console.log('Error');
+		console.log(e);
+
+	}
+
+	/* walletAddressFromPublicKey */
+
+	console.log("Testing: walletAddressFromPublicKey()");
+
+	try {
+
+		let walletAddressFromPublicKey = bambooCrypto.walletAddressFromPublicKey(newAddress.publicKey);
+
+		console.log(walletAddressFromPublicKey);
+
+	} catch (e) {
+
+		console.log('Error');
+		console.log(e);
+
+	}
+
+
+
 
 /* Bamboo API Methods */
-
-(async () => {
 
 	/* getNetworkInfo */
 

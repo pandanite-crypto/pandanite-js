@@ -822,6 +822,57 @@ console.log(e);
 	
 	}
 
+	/*
+	
+		Validate a message using publickey and signature
+	
+	
+	*/
+	
+	walletAddressFromPublicKey(publicKey) {
+	
+		try {
+
+			const pad = function(n, width, z) {
+			  z = z || '0';
+			  n = n + '';
+			  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+			}
+			
+			let bpublicKey = Buffer.from(publicKey, "hex");
+	
+			let hash = crypto.createHash('sha256').update(bpublicKey).digest();
+
+			let hash2 = crypto.createHash('ripemd160').update(hash).digest();
+
+			let hash3 = crypto.createHash('sha256').update(hash2).digest();
+
+			let hash4 = crypto.createHash('sha256').update(hash3).digest();
+	
+			let checksum = hash4[0];
+	
+			let address = [];
+	
+			address[0] = '00';
+			for(let i = 1; i <= 20; i++) 
+			{
+				address[i] = pad(hash2[i-1].toString(16), 2);
+			}
+			address[21] = pad(hash4[0].toString(16), 2);
+			address[22] = pad(hash4[1].toString(16), 2);
+			address[23] = pad(hash4[2].toString(16), 2);
+			address[24] = pad(hash4[3].toString(16), 2);
+	
+			return address.join('').toUpperCase();
+    
+    	} catch (e) {
+    		return false;
+    	}
+	
+	}
+
+
+
 }
 
 module.exports = {api: BambooApi, crypto: BambooCrypto};
