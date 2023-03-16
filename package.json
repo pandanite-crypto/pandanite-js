@@ -1,12 +1,12 @@
 {
-  "name": "bamboo-js",
+  "name": "pandanite-js",
   "version": "1.0.0",
-  "description": "Nodejs Module for Interacting with Bamboo Crypto",
+  "description": "Nodejs Module for Interacting with Pandanite Crypto",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/mrmikeo/bamboo-js",
+  "repository": "https://github.com/pandanite-crypto/pandanite-js",
   "author": "Michael Osullivan",
   "license": "CC0-1.0",
   "dependencies": {
