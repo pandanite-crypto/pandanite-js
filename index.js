@@ -4,7 +4,7 @@ const ed25519   = require('ed25519');
 const crypto    = require('crypto');
 const bip39     = require('bip39');
 
-class BambooApi {
+class PandaniteApi {
 
     /*
     
@@ -480,7 +480,7 @@ class BambooApi {
 
 }
 
-class BambooCrypto {
+class PandaniteCrypto {
 
     constructor() {
 
@@ -873,4 +873,4 @@ console.log(e);
 
 }
 
-module.exports = {api: BambooApi, crypto: BambooCrypto};
+module.exports = {api: PandaniteApi, crypto: PandaniteCrypto};
