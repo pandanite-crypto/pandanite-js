@@ -1,12 +1,12 @@
-const Bamboo = require('./index');
+const Pandanite = require('./index');
 
-const bambooCrypto = new Bamboo.crypto();
-const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
+const pandaniteCrypto = new Pandanite.crypto();
+const pandaniteApi = new Pandanite.api('https://pandanite.net');
 
 
 (async () => {
 
-	/* Bamboo Crypto Methods */
+	/* Pandanite Crypto Methods */
 
 	/* generateNewAddress */
 
@@ -16,7 +16,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 
-		newAddress = bambooCrypto.generateNewAddress();
+		newAddress = pandaniteCrypto.generateNewAddress();
 
 		console.log(newAddress);
 
@@ -33,7 +33,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 
-		let restoreAddress = bambooCrypto.generateAddressFromMnemonic(newAddress.mnemonic);
+		let restoreAddress = pandaniteCrypto.generateAddressFromMnemonic(newAddress.mnemonic);
 
 		console.log(restoreAddress);
 
@@ -50,7 +50,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 
-		let validateAddress = bambooCrypto.validateAddress(newAddress.address);
+		let validateAddress = pandaniteCrypto.validateAddress(newAddress.address);
 
 		console.log(validateAddress);
 
@@ -67,7 +67,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 
-		let createSignedTransaction = bambooCrypto.createSignedTransaction(newAddress.address, 1, newAddress.publicKey, newAddress.privateKey);
+		let createSignedTransaction = pandaniteCrypto.createSignedTransaction(newAddress.address, 1, newAddress.publicKey, newAddress.privateKey);
 
 		console.log(createSignedTransaction);
 
@@ -86,7 +86,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 
-		signMessage = bambooCrypto.signMessage('test', newAddress.publicKey, newAddress.privateKey);
+		signMessage = pandaniteCrypto.signMessage('test', newAddress.publicKey, newAddress.privateKey);
 
 		console.log(signMessage);
 
@@ -103,7 +103,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 
-		let verifyMessage = bambooCrypto.verifyMessage('test', newAddress.publicKey, signMessage);
+		let verifyMessage = pandaniteCrypto.verifyMessage('test', newAddress.publicKey, signMessage);
 
 		console.log(verifyMessage);
 
@@ -120,7 +120,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 
-		let walletAddressFromPublicKey = bambooCrypto.walletAddressFromPublicKey(newAddress.publicKey);
+		let walletAddressFromPublicKey = pandaniteCrypto.walletAddressFromPublicKey(newAddress.publicKey);
 
 		console.log(walletAddressFromPublicKey);
 
@@ -134,7 +134,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 
 
-/* Bamboo API Methods */
+/* Pandanite API Methods */
 
 	/* getNetworkInfo */
 
@@ -144,7 +144,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 	
 	try {
 	
-		getNetworkInfo = await bambooApi.getNetworkInfo();
+		getNetworkInfo = await pandaniteApi.getNetworkInfo();
 
 		console.log(getNetworkInfo);
 
@@ -161,7 +161,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 	
-		let getBlock = await bambooApi.getBlock(getNetworkInfo.blockheight);
+		let getBlock = await pandaniteApi.getBlock(getNetworkInfo.blockheight);
 
 		console.log(getBlock);
 
@@ -178,7 +178,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 	
-		let getTransaction = await bambooApi.getTransaction('616635cb13db0bd0e98e39af2f490ce7d33833f268ec3a0908a9f72267328a42')
+		let getTransaction = await pandaniteApi.getTransaction('616635cb13db0bd0e98e39af2f490ce7d33833f268ec3a0908a9f72267328a42')
 
 		console.log(getTransaction);
 
@@ -195,7 +195,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 	
-		let getBalance = await bambooApi.getBalance(newAddress.address);
+		let getBalance = await pandaniteApi.getBalance(newAddress.address);
 
 		console.log(getBalance);
 
@@ -212,7 +212,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 	
-		let getFeeEstimate = await bambooApi.getFeeEstimate();
+		let getFeeEstimate = await pandaniteApi.getFeeEstimate();
 
 		console.log(getFeeEstimate);
 	
@@ -229,7 +229,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 	
-		let getTransactionsForAddress = await bambooApi.getTransactionsForAddress('006185E4F134C265DEFBF4DA270E6D504A8ACC45C5DA5F7528');
+		let getTransactionsForAddress = await pandaniteApi.getTransactionsForAddress('006185E4F134C265DEFBF4DA270E6D504A8ACC45C5DA5F7528');
 
 		console.log(getTransactionsForAddress);
 
@@ -246,7 +246,7 @@ const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
 
 	try {
 	
-		let getRecentTransactions = await bambooApi.getRecentTransactions();
+		let getRecentTransactions = await pandaniteApi.getRecentTransactions();
 
 		console.log(getRecentTransactions);
 	
