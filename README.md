@@ -4,7 +4,7 @@
 <h3>Download</h3>
 
 ```
-git clone https://github.com/mrmikeo/bamboo-js
+git clone https://github.com/pandanite-crypto/pandanite-js
 ```
 
 <h3>Installation</h3>
@@ -22,16 +22,16 @@ node example.js
 <h3>Include into your project</h3>
 
 ```
-npm install https://github.com/mrmikeo/bamboo-js.git
+npm install https://github.com/pandanite-crypto/pandanite-js.git
 ```
 
 <h3>Instantiate</h3>
 
 ```
-const Bamboo = require('bamboo-js');
+const Pandanite = require('pandanite-js');
 
-const bambooCrypto = new Bamboo.crypto();
-const bambooApi = new Bamboo.api('http://65.21.224.171:3000');
+const pandaniteCrypto = new Pandanite.crypto();
+const pandaniteApi = new Pandanite.api('https://pandanite.net');
 ```
 
 See example.js for method calling examples
