@@ -502,7 +502,9 @@ class PandaniteCrypto {
 
         try {
 
-            let mnemonic = bip39.generateMnemonic()
+            const entropy = crypto.randomBytes(16);
+            
+            let mnemonic = bip39.generateMnemonic(entropy);
             
             let seed = bip39.mnemonicToSeedSync(mnemonic, password);
             
